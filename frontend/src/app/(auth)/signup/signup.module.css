@@ -1,0 +1,3 @@
+.icons{
+    @apply size-6 stroke-green-300 text-green-500 absolute insert-y-0 left-1 top-1
+}
