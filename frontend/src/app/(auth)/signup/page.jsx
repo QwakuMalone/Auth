@@ -3,9 +3,10 @@ import * as motion from "motion/react-client"
 import { CiMail } from "react-icons/ci";
 import { AiOutlineUser } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { IoIosClose } from "react-icons/io";
 import { useState } from "react";
 import Link from "next/link";
+import PasswordStrengthMeter from "@/components/passwordStrength";
+import PasswordCriteria from "@/components/passwordCriteria";
 
 // import styles from './signup.module.css'
 export default function SignupPage() {
@@ -50,17 +51,12 @@ export default function SignupPage() {
                     />
                 </div>
                 {/* Passwod strength meter */}
+                <PasswordStrengthMeter password={password}/>
                 
 
                 {/* Password requirement */}
-                <div className="w-full">
-                    <p className="w-full flex items-center text-gray-400"> <IoIosClose className="text-green-800 size-6" /> At least 6 characters</p>
-                    <p className="w-full flex items-center text-gray-400"> <IoIosClose className="text-green-800 size-6" /> Contains uppercase letter</p>
-                    <p className="w-full flex items-center text-gray-400"> <IoIosClose className="text-green-800 size-6" /> Contains lowercase letter</p>
-                    <p className="w-full flex items-center text-gray-400"> <IoIosClose className="text-green-800 size-6" /> Contains a number</p>
-                    <p className="w-full flex items-center text-gray-400"> <IoIosClose className="text-green-800 size-6" /> Contains special character</p>
-                </div>
-
+                <PasswordCriteria password={password}/>
+               
                 {/* button */}
                 <motion.button className="w-5/6 py-2 bg-gradient-to-r from-green-500 to-green-800 text-center text-white text-md rounded-lg hover:from-emerald-500 hover:to-emerald-700"
                     whileHover={{ scale: 1.02 }}
